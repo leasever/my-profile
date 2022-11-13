@@ -4,8 +4,9 @@ let main = document.querySelector("#main");
 
 export const router = async (route) => {
   main.innerHTML = ``;
+  history.replaceState({}, null, "/" + route);
   switch (route) {
-    // case "":
+    case "":
     case "#/":
       return main.appendChild(pages.home());
     case "#/proyectos":

@@ -1,4 +1,5 @@
 import views from "../views/404.html?raw";
+import { router } from "../routes/index.routes";
 
 export default () => {
   const container = document.createElement("div");
@@ -7,9 +8,8 @@ export default () => {
 
   const btnclick = container.querySelector("#btnClick");
   btnclick.addEventListener("click", () => {
-    
-    alert("Este es el 404");
-    window.history.back();
+    router("");
+    history.replaceState({}, null, "");
   });
   return container;
 };
