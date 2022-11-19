@@ -1,13 +1,14 @@
 import views from "../views/home.html?raw";
-
-export default () => {  
+import { Popover } from "../components/Popover";
+import projectDss from "../data/projectDss.json";
+export default () => {
   const container = document.createElement("div");
-  container.className = "container";
   container.innerHTML = views;
 
-  const btnclick = container.querySelector("#btnClick");
-  btnclick.addEventListener("click", ()=>{
-    alert("Este es el home")
-  })
+  const logosClientDss = container.querySelector("#logosClientDss");
+  // const logosAdmDss = container.querySelector("#logosAdmDss");
+
+  logosClientDss.innerHTML = Popover(projectDss);
+  // logosAdmDss.innerHTML = Popover(projectDss);
   return container;
 };

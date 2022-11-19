@@ -1,4 +1,4 @@
-import views from "../views/proyectos.html?raw";
+import views from "../views/projects.html?raw";
 
 const getPosts = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -16,7 +16,7 @@ export default async () => {
   const postcontainer = container.querySelector("#posts");
   const total = container.querySelector("#total");
   total.textContent = posts.length;
-  posts.forEach((post) => {    
+  posts.forEach((post) => {
     postcontainer.innerHTML += `
       <li>
         <h5>${post.title}</h5>
@@ -26,6 +26,6 @@ export default async () => {
       </li>
     `;
   });
-  
+
   return container;
 };

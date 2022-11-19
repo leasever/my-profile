@@ -1,4 +1,4 @@
-import views from "../views/contacto.html?raw";
+import views from "../views/contact.html?raw";
 
 export default () => {
   const container = document.createElement("div");

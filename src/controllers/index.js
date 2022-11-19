@@ -1,11 +1,11 @@
 import Home from "./home.controller";
 import NotFound from "./404.controller";
-import Contacto from "./contacto.controller";
-import Proyectos from "./proyectos.controller";
+import Contact from "./contact.controller";
+import Projects from "./projects.controller";
 
 export const pages = {
   home: Home,
-  contacto: Contacto,
+  contact: Contact,
   notFound: NotFound,
-  proyectos: Proyectos,
+  projects: Projects,
 };
