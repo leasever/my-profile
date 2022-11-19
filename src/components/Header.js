@@ -1,38 +1,24 @@
+import view from "./header.html?raw";
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
+
 export const Header = () => {
-  document.querySelector("#header").innerHTML = `
-  <div class="container inner-header-pc">
-     <a href="#/"><h1>ABRAHAM LEANDRO</h1></a>
-     <nav class="menu">
-       <a href="#/">Sobre mí</a>
-       <a href="#/proyectos">Proyectos</a>
-       <a href="#/cv">CV</a>
-       <a href="#/contacto">Contacto</a>
-     </nav>       
-  </div>
-  <div class="container inner-header-movil">    
-     <a href="#/"><h1>ABRAHAM LEANDRO</h1></a> 
-     <div class="burger-menu" id="burgerMenu">
-      <i class="fa-sharp fa-solid fa-bars"></i>
-     </div>
-     <div class="slide-menu" id="slideMenu">
-      <nav class="menu">
-       <a href="#/">Sobre mí</a>
-       <a href="#/proyectos">Proyectos</a>
-       <a href="#/cv">CV</a>
-       <a href="#/contacto">Contacto</a>
-      </nav>
-     </div>     
-  </div>`;
+  const header = $("#header");
+  header.innerHTML = view;
+
   let propMenu = {
-    burgerMenu: document.querySelector("#burgerMenu"),
-    slideMenu: document.querySelector("#slideMenu"),
+    burgerMenu: $("#burgerMenu"),
+    slideMenu: $("#slideMenu"),
     menuActive: false,
-    elemMenu: document.querySelectorAll("#slideMenu .menu a"),
+    elemMenu: $$("#slideMenu .menu a"),
+    iconMenu: $("#iconMenu"),
+    iconClose: $("#iconClose"),
   };
 
   let metMenu = {
     inicio: function () {
       propMenu.burgerMenu.addEventListener("click", metMenu.toggleMenu);
+
       propMenu.elemMenu.forEach((item) => {
         item.addEventListener("click", metMenu.hiddeMenu);
       });
@@ -41,15 +27,21 @@ export const Header = () => {
     toggleMenu: function () {
       if (propMenu.menuActive == false) {
         propMenu.menuActive = true;
-        propMenu.slideMenu.className = propMenu.slideMenu.className + " active";
+        propMenu.slideMenu.classList.add("active");
+        propMenu.iconMenu.classList.add("hidden");
+        propMenu.iconClose.classList.remove("hidden");
       } else {
         propMenu.menuActive = false;
-        propMenu.slideMenu.className = propMenu.slideMenu.className.replace("active", "");
+        propMenu.slideMenu.classList.remove("active");
+        propMenu.iconMenu.classList.remove("hidden");
+        propMenu.iconClose.classList.add("hidden");
       }
     },
     hiddeMenu: function () {
       propMenu.menuActive = false;
-      propMenu.slideMenu.className = propMenu.slideMenu.className.replace("active", "");
+      propMenu.slideMenu.classList.remove("active");
+      propMenu.iconMenu.classList.remove("hidden");
+      propMenu.iconClose.classList.add("hidden");
     },
   };
   return metMenu.inicio();
