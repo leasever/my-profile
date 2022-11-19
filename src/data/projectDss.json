@@ -1,0 +1,42 @@
+[
+  {
+    "img": "js.png",
+    "title": "JavaScript"
+  },
+  {
+    "img": "typescript.png",
+    "title": "TypeScript"
+  },
+  {
+    "img": "html5.png",
+    "title": "HTML5"
+  },
+  {
+    "img": "css3.png",
+    "title": "CSS3"
+  },
+  {
+    "img": "react.svg",
+    "title": "React"
+  },
+  {
+    "img": "bootstrap.svg",
+    "title": "Bootstrap"
+  },
+  {
+    "img": "vite.svg",
+    "title": "Vite"
+  },
+  {
+    "img": "nodejs.svg",
+    "title": "Node.js"
+  },
+  {
+    "img": "npm.svg",
+    "title": "npm"
+  },
+  {
+    "img": "sass.svg",
+    "title": "Sass"
+  }
+]
